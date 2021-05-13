@@ -1,51 +1,46 @@
 class Calculator:
     def __init__(self):
+        self.__num_1 = '0'
+        self.__num_2 = '0'
         self.__screen = []
         self.__operations = ['+', '-', 'x', '/', '\u221a', 'x²', '1/x', '%', 'CE', 'C', '-/+', '=', '\u2190']
+    
+    def __is_operator(self, button):
+        return button in self.__operations
+    
+    def __identify_operator(self, button):
+        if button == '+':
+            return '+'
+        elif button == '-':
+            return '-'
+        elif button == 'x':
+            return '*'
+        elif button == '/':
+            return '/'
+        elif button == '\u221a':
+            return '\u221a'
+        elif button == 'x²':
+            return '(1/2)**2'
+        elif button == '1/x':
+            return '1/x'
+        elif button == '%':
+            return '%'
+        elif button == 'CE':
+            return 'CE'
+        elif button == 'C':
+            return 'C'
+        elif button == '-/+':
+            return '-/+'
+        elif button == '=':
+            return '='
+        elif button == '\u2190':
+            return '\u2190'
 
     def button_click(self, button, label):
-        if label['text'] == '0' and button == '0':
-            print(f'screen: {self.__screen}')
-            pass
-
-        elif label['text'] == '0' and button == '.':
-            self.__screen.append('0.')
-            print(f'screen: {self.__screen}')
+        if self.__is_operator(button):
+            operator = self.__identify_operator(button)
+            print(operator)
         
-        elif button not in self.__operations and len(self.__screen) == 0:
-            self.__screen.append(button)
-            label['text'] = self.__screen[0]
-            print(f'screen: {self.__screen}')
-        
-        elif button not in self.__operations and len(self.__screen) == 1:
-            n = self.__screen[0] + button
-            self.__screen[0] = n
-            label['text'] = self.__screen[0]
-            print(f'screen: {self.__screen}')
-        
-        elif button in self.__operations and len(self.__screen) == 0:
-            print(f'screen: {self.__screen}')
-            pass
-
-        elif button in self.__operations and len(self.__screen) == 1:
-            self.__screen.append(button)
-            label['text'] = '0'
-            print(f'screen: {self.__screen}')
-        
-        elif button not in self.__operations and len(self.__screen) == 2:
-            self.__screen.append(button)
-            label['text'] = self.__screen[2]
-            print(f'screen: {self.__screen}')
-        
-        elif button not in self.__operations and len(self.__screen) == 3:
-            n = self.__screen[2] + button
-            self.__screen[2] = n
-            label['text'] = self.__screen[2]
-            print(f'screen: {self.__screen}')
-
-        elif button in self.__operations and len(self.__screen) == 3:
-            n = eval(f'{self.__screen[0]} {self.__screen[1]} {self.__screen[2]}')
-            print(n)
-            self.__screen = [str(n)]
-            label['text'] = self.__screen[0]
-            print(f'screen: {self.__screen}')
+        else:
+            self.__num_1 += button
+            label['text'] = self.__num_1
