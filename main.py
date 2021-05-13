@@ -85,18 +85,6 @@ btn_prod = tk.Button(master=window,
 btn_div = tk.Button(master=window, 
                     text='/',
                     command=lambda:calculator.button_click(btn_div.cget('text'), label_screen))
-btn_sqrt = tk.Button(master=window, 
-                    text=u'\u221a',
-                    command=lambda:calculator.button_click(btn_sqrt.cget('text'), label_screen))
-btn_pow = tk.Button(master=window, 
-                    text='x²',
-                    command=lambda:calculator.button_click(btn_pow.cget('text'), label_screen))
-btn_frac = tk.Button(master=window, 
-                    text='1/x',
-                    command=lambda:calculator.button_click(btn_frac.cget('text'), label_screen))
-btn_percent = tk.Button(master=window, 
-                        text='%',
-                        command=lambda:calculator.button_click(btn_percent.cget('text'), label_screen))
 btn_ce = tk.Button(master=window, 
                 text='CE',
                 command=lambda:calculator.button_click(btn_ce.cget('text'), label_screen))
@@ -106,12 +94,6 @@ btn_c = tk.Button(master=window,
 btn_backspace = tk.Button(master=window, 
                         text=u'\u2190',
                         command=lambda:calculator.button_click(btn_backspace.cget('text'), label_screen))
-btn_negate = tk.Button(master=window, 
-                    text='-/+',
-                    command=lambda:calculator.button_click())
-btn_point = tk.Button(master=window, 
-                    text=',',
-                    command=lambda:calculator.button_click())
 
 btn_0.pack()
 btn_1.pack()
@@ -129,14 +111,8 @@ btn_sum.pack()
 btn_dif.pack()
 btn_prod.pack()
 btn_div.pack()
-btn_sqrt.pack()
-btn_pow.pack()
-btn_frac.pack()
-btn_percent.pack()
 btn_ce.pack()
 btn_c.pack()
 btn_backspace.pack()
-btn_negate.pack()
-btn_point.pack()
 
 window.mainloop()
