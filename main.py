@@ -23,77 +23,162 @@ window.resizable(False, False)
 window['bg'] = '#808080'
 
 # !labels
-label_screen = tk.Label(master=window,
-                        text='0',
-                        font='Arial 20')
+label_screen = tk.Label(
+    master=window,
+    text='0',
+    font='Arial 20',
+    bd=4,
+    relief='sunken',
+    width=w,
+    anchor='e'
+)
 
 label_screen.pack()
 
 # !botões
-btn_0 = tk.Button(master=window, 
-                text='0', 
-                command=lambda:calculator.button_click(btn_0.cget('text'), label_screen))
+btn_0 = tk.Button(
+    master=window, 
+    text='0', 
+    command=lambda:calculator.button_click(btn_0.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_1 = tk.Button(master=window, 
-                text='1',
-                command=lambda:calculator.button_click(btn_1.cget('text'), label_screen))
+btn_1 = tk.Button(
+    master=window, 
+    text='1',
+    command=lambda:calculator.button_click(btn_1.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_2 = tk.Button(master=window, 
-                text='2',
-                command=lambda:calculator.button_click(btn_2.cget('text'), label_screen))
+btn_2 = tk.Button(
+    master=window, 
+    text='2',
+    command=lambda:calculator.button_click(btn_2.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_3 = tk.Button(master=window, 
-                text='3',
-                command=lambda:calculator.button_click(btn_3.cget('text'), label_screen))
+btn_3 = tk.Button(
+    master=window, 
+    text='3',
+    command=lambda:calculator.button_click(btn_3.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_4 = tk.Button(master=window, 
-                text='4',
-                command=lambda:calculator.button_click(btn_4.cget('text'), label_screen))
+btn_4 = tk.Button(
+    master=window, 
+    text='4',
+    command=lambda:calculator.button_click(btn_4.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_5 = tk.Button(master=window, 
-                text='5',
-                command=lambda:calculator.button_click(btn_5.cget('text'), label_screen))
+btn_5 = tk.Button(
+    master=window, 
+    text='5',
+    command=lambda:calculator.button_click(btn_5.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_6 = tk.Button(master=window, 
-                text='6',
-                command=lambda:calculator.button_click(btn_6.cget('text'), label_screen))
+btn_6 = tk.Button(
+    master=window, 
+    text='6',
+    command=lambda:calculator.button_click(btn_6.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_7 = tk.Button(master=window, 
-                text='7',
-                command=lambda:calculator.button_click(btn_7.cget('text'), label_screen))
+btn_7 = tk.Button(
+    master=window, 
+    text='7',
+    command=lambda:calculator.button_click(btn_7.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_8 = tk.Button(master=window, 
-                text='8',
-                command=lambda:calculator.button_click(btn_8.cget('text'), label_screen))
+btn_8 = tk.Button(
+    master=window, 
+    text='8',
+    command=lambda:calculator.button_click(btn_8.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_9 = tk.Button(master=window, 
-                text='9',
-                command=lambda:calculator.button_click(btn_9.cget('text'), label_screen))
+btn_9 = tk.Button(
+    master=window, 
+    text='9',
+    command=lambda:calculator.button_click(btn_9.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
-btn_equal = tk.Button(master=window, 
-                    text='=',
-                    command=lambda:calculator.button_click(btn_equal.cget('text'), label_screen))
-btn_sum = tk.Button(master=window, 
-                    text='+',
-                    command=lambda:calculator.button_click(btn_sum.cget('text'), label_screen))
-btn_dif = tk.Button(master=window, 
-                    text='-',
-                    command=lambda:calculator.button_click(btn_dif.cget('text'), label_screen))
-btn_prod = tk.Button(master=window, 
-                    text='x',
-                    command=lambda:calculator.button_click(btn_prod.cget('text'), label_screen))
-btn_div = tk.Button(master=window, 
-                    text='/',
-                    command=lambda:calculator.button_click(btn_div.cget('text'), label_screen))
-btn_ce = tk.Button(master=window, 
-                text='CE',
-                command=lambda:calculator.button_click(btn_ce.cget('text'), label_screen))
-btn_c = tk.Button(master=window, 
-                text='C',
-                command=lambda:calculator.button_click(btn_c.cget('text'), label_screen))
-btn_backspace = tk.Button(master=window, 
-                        text=u'\u2190',
-                        command=lambda:calculator.button_click(btn_backspace.cget('text'), label_screen))
+btn_equal = tk.Button(
+    master=window, 
+    text='=',
+    command=lambda:calculator.button_click(btn_equal.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
+
+btn_sum = tk.Button(
+    master=window, 
+    text='+',
+    command=lambda:calculator.button_click(btn_sum.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
+
+btn_dif = tk.Button(
+    master=window, 
+    text='-',
+    command=lambda:calculator.button_click(btn_dif.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
+
+btn_prod = tk.Button(
+    master=window, 
+    text='x',
+    command=lambda:calculator.button_click(btn_prod.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
+
+btn_div = tk.Button(
+    master=window, 
+    text='/',
+    command=lambda:calculator.button_click(btn_div.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
+
+btn_ce = tk.Button(
+    master=window, 
+    text='CE',
+    command=lambda:calculator.button_click(btn_ce.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
+
+btn_c = tk.Button(
+    master=window, 
+    text='C',
+    command=lambda:calculator.button_click(btn_c.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
+
+btn_backspace = tk.Button(
+    master=window, 
+    text=u'\u2190',
+    command=lambda:calculator.button_click(btn_backspace.cget('text'), label_screen),
+    bd=4,
+    relief='raised'
+)
 
 btn_0.pack()
 btn_1.pack()
