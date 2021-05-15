@@ -6,7 +6,7 @@ calculator = Calculator()
 
 # !configurações com relação a janela
 w = 500
-h = 500
+h = 250
 
 window = tk.Tk()
 window.iconbitmap('icons/icon.ico')
@@ -41,7 +41,9 @@ btn_0 = tk.Button(
     text='0', 
     command=lambda:calculator.button_click(btn_0.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=36,
+    height=2
 )
 
 btn_1 = tk.Button(
@@ -49,7 +51,9 @@ btn_1 = tk.Button(
     text='1',
     command=lambda:calculator.button_click(btn_1.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_2 = tk.Button(
@@ -57,7 +61,9 @@ btn_2 = tk.Button(
     text='2',
     command=lambda:calculator.button_click(btn_2.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_3 = tk.Button(
@@ -65,7 +71,9 @@ btn_3 = tk.Button(
     text='3',
     command=lambda:calculator.button_click(btn_3.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_4 = tk.Button(
@@ -73,7 +81,9 @@ btn_4 = tk.Button(
     text='4',
     command=lambda:calculator.button_click(btn_4.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_5 = tk.Button(
@@ -81,7 +91,9 @@ btn_5 = tk.Button(
     text='5',
     command=lambda:calculator.button_click(btn_5.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_6 = tk.Button(
@@ -89,7 +101,9 @@ btn_6 = tk.Button(
     text='6',
     command=lambda:calculator.button_click(btn_6.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_7 = tk.Button(
@@ -97,7 +111,9 @@ btn_7 = tk.Button(
     text='7',
     command=lambda:calculator.button_click(btn_7.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_8 = tk.Button(
@@ -105,7 +121,9 @@ btn_8 = tk.Button(
     text='8',
     command=lambda:calculator.button_click(btn_8.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_9 = tk.Button(
@@ -113,7 +131,9 @@ btn_9 = tk.Button(
     text='9',
     command=lambda:calculator.button_click(btn_9.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=10,
+    height=2
 )
 
 btn_equal = tk.Button(
@@ -121,7 +141,9 @@ btn_equal = tk.Button(
     text='=',
     command=lambda:calculator.button_click(btn_equal.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=29,
+    height=2
 )
 
 btn_sum = tk.Button(
@@ -129,7 +151,9 @@ btn_sum = tk.Button(
     text='+',
     command=lambda:calculator.button_click(btn_sum.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=13,
+    height=2
 )
 
 btn_dif = tk.Button(
@@ -137,7 +161,9 @@ btn_dif = tk.Button(
     text='-',
     command=lambda:calculator.button_click(btn_dif.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=13,
+    height=2
 )
 
 btn_prod = tk.Button(
@@ -145,7 +171,9 @@ btn_prod = tk.Button(
     text='x',
     command=lambda:calculator.button_click(btn_prod.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=13,
+    height=2
 )
 
 btn_div = tk.Button(
@@ -153,23 +181,9 @@ btn_div = tk.Button(
     text='/',
     command=lambda:calculator.button_click(btn_div.cget('text'), label_screen),
     bd=4,
-    relief='raised'
-)
-
-btn_ce = tk.Button(
-    master=window, 
-    text='CE',
-    command=lambda:calculator.button_click(btn_ce.cget('text'), label_screen),
-    bd=4,
-    relief='raised'
-)
-
-btn_c = tk.Button(
-    master=window, 
-    text='C',
-    command=lambda:calculator.button_click(btn_c.cget('text'), label_screen),
-    bd=4,
-    relief='raised'
+    relief='raised',
+    width=13,
+    height=2
 )
 
 btn_backspace = tk.Button(
@@ -177,27 +191,27 @@ btn_backspace = tk.Button(
     text=u'\u2190',
     command=lambda:calculator.button_click(btn_backspace.cget('text'), label_screen),
     bd=4,
-    relief='raised'
+    relief='raised',
+    width=29,
+    height=2
 )
 
-btn_0.pack()
-btn_1.pack()
-btn_2.pack()
-btn_3.pack()
-btn_4.pack()
-btn_5.pack()
-btn_6.pack()
-btn_7.pack()
-btn_8.pack()
-btn_9.pack()
+btn_0.place(x=7, y=200)
+btn_1.place(x=7, y=150)
+btn_2.place(x=97, y=150)
+btn_3.place(x=187, y=150)
+btn_4.place(x=7, y=100)
+btn_5.place(x=97, y=100)
+btn_6.place(x=187, y=100)
+btn_7.place(x=7, y=50)
+btn_8.place(x=97, y=50)
+btn_9.place(x=187, y=50)
 
-btn_equal.pack()
-btn_sum.pack()
-btn_dif.pack()
-btn_prod.pack()
-btn_div.pack()
-btn_ce.pack()
-btn_c.pack()
-btn_backspace.pack()
+btn_equal.place(x=277, y=200)
+btn_sum.place(x=277, y=100)
+btn_dif.place(x=390, y=100)
+btn_prod.place(x=277, y=150)
+btn_div.place(x=390, y=150)
+btn_backspace.place(x=277, y=50)
 
 window.mainloop()
