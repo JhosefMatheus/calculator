@@ -20,31 +20,40 @@ class Calculator:
             return '/'
         elif button == '=':
             return '='
-        elif button == 'CE':
-            return 'CE'
         elif button == 'C':
             return 'C'
-        elif button == '\u2190':
-            return 'backspace'
         
 
     def button_click(self, button, label):
         if self.__is_operator(button):
             if self.__identify_operator(button) != '=':
-                self.__operator = self.__identify_operator(button)
-                self.__num_1 = label['text']
-                self.__first_time = True
-                print(f'Operator: {self.__operator}')
+                if self.__identify_operator(button) != 'C':
+                    self.__operator = self.__identify_operator(button)
+                    self.__num_1 = label['text']
+                    self.__first_time = True
+                    print(f'Operator: {self.__operator}')
+                else:
+                    label['text'] = '0'
+                    self.__first_time = True
             
             else:
-                print(self.__num_1, self.__num_2)
-                self.__num_2 = label['text']
-                result = eval(f'{self.__num_1} {self.__operator} {self.__num_2}')
-                label['text'] = result
-                self.__num_1 = ''
-                self.__num_2 = ''
-                self.__first_time = True
-                self.__operator = None
+                try:
+                    print(self.__num_1, self.__num_2)
+                    self.__num_2 = label['text']
+                    result = eval(f'{self.__num_1} {self.__operator} {self.__num_2}')
+                    label['text'] = result
+                    # self.__num_1 = ''
+                    # self.__num_2 = ''
+                    # self.__first_time = True
+                    # self.__operator = None
+                except Exception as error:
+                    print(error)
+                    label['text'] = 'Error'
+                finally:
+                    self.__num_1 = ''
+                    self.__num_2 = ''
+                    self.__first_time = True
+                    self.__operator = None
         
         else:
             if self.__operator is None:

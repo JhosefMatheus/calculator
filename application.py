@@ -186,10 +186,10 @@ btn_div = tk.Button(
     height=2
 )
 
-btn_backspace = tk.Button(
+btn_c = tk.Button(
     master=window, 
-    text=u'\u2190',
-    command=lambda:calculator.button_click(btn_backspace.cget('text'), label_screen),
+    text='C',
+    command=lambda:calculator.button_click(btn_c.cget('text'), label_screen),
     bd=4,
     relief='raised',
     width=29,
@@ -212,6 +212,6 @@ btn_sum.place(x=277, y=100)
 btn_dif.place(x=390, y=100)
 btn_prod.place(x=277, y=150)
 btn_div.place(x=390, y=150)
-btn_backspace.place(x=277, y=50)
+btn_c.place(x=277, y=50)
 
 window.mainloop()
