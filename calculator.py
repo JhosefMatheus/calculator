@@ -4,6 +4,7 @@ class Calculator:
         self.__num_2 = ''
         self.__operator = None
         self.__operations = ['+', '-', 'x', '/', 'CE', 'C', '=', '\u2190']
+        self.__first_time = True
     
     def __is_operator(self, button):
         return button in self.__operations
@@ -31,20 +32,35 @@ class Calculator:
         if self.__is_operator(button):
             if self.__identify_operator(button) != '=':
                 self.__operator = self.__identify_operator(button)
+                self.__num_1 = label['text']
+                self.__first_time = True
                 print(f'Operator: {self.__operator}')
             
             else:
+                print(self.__num_1, self.__num_2)
+                self.__num_2 = label['text']
                 result = eval(f'{self.__num_1} {self.__operator} {self.__num_2}')
                 label['text'] = result
                 self.__num_1 = ''
                 self.__num_2 = ''
+                self.__first_time = True
                 self.__operator = None
         
         else:
             if self.__operator is None:
-                self.__num_1 += button
-                label['text'] = self.__num_1
+                if self.__first_time:
+                    label['text'] = button
+                    self.__first_time = False
+                else:
+                    label['text'] += button
+                # self.__num_1 += button
+                # label['text'] = self.__num_1
             else:
-                self.__num_2 += button
-                label['text'] = self.__num_2
+                if self.__first_time:
+                    label['text'] = button
+                    self.__first_time = False
+                else:
+                    label['text'] += button
+                # self.__num_2 += button
+                # label['text'] = self.__num_2
             print(f'Number: {button}')
